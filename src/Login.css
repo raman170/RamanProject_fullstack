@@ -1,0 +1,108 @@
+/* Apply background image to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+  }
+  
+  /* Container for login box */
+  .login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Login box styling */
+  .login-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    margin-top: 100px;
+  }
+  
+  /* Title styles */
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .login-subtitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Table styling */
+  .login-form table {
+    width: 100%;
+  }
+  
+  .login-form td {
+    padding: 8px;
+  }
+  
+  /* Label styles */
+  .login-form label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Input field styles */
+  .login-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Center align elements */
+  .center {
+    text-align: center;
+  }
+  
+  /* Button styles */
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Signup and Forgot Password buttons */
+  .signup-button,
+  .forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #8baadd;
+    text-decoration: none;
+  }
+  
+  .signup-button:hover,
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
