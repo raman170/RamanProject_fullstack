@@ -280,24 +280,40 @@ Nodejs: [
     const score = calculateScore();
     const user = auth.currentUser;
   
+    console.log("Quiz Submitted");
+    console.log("Score:", score);
+    console.log("User:", user);
+  
     if (user) {
       const userId = user.uid;
-      saveUserScore(userId, {
+      const resultData = {
         score: score,
         topic: topic,
         timestamp: new Date().toISOString()
-      });
+      };
+  
+      console.log("Saving to Firebase:", resultData);
+  
+      saveUserScore(userId, resultData);
       alert(`Your score: ${score.toFixed(2)}%\nResult saved to Firebase.`);
     } else {
       alert("User not logged in. Cannot save score.");
     }
   };
   
+  
 // Function to save result
 const saveUserScore = (userId, resultData) => {
   const scoreRef = push(ref(database, `results/${userId}`));
-  set(scoreRef, resultData);
+  set(scoreRef, resultData)
+    .then(() => {
+      console.log("✅ Score saved successfully to Firebase.");
+    })
+    .catch((error) => {
+      console.error("❌ Error saving score to Firebase:", error);
+    });
 };
+
 
   // Handle next question
   const handleNextQuestion = () => {
@@ -451,7 +467,7 @@ const saveUserScore = (userId, resultData) => {
 
             <div className="submit-button">
             {currentQuestionIndex === questions[topic].length - 1 && (
-  <button onClick={() => alert(`Your score: ${calculateScore()}%`)}>
+  <button onClick={handleSubmitQuiz}>
   Submit Quiz
 </button>
 
