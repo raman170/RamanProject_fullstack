@@ -12,7 +12,7 @@ import "./Tutorial";
 import "./Contact";
 import "./Aboutus";
 import "./User";
-import "./Exercise";
+
 import React, { useState} from 'react';
 
 

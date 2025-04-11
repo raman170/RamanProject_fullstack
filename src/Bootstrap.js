@@ -83,1621 +83,689 @@ const BootstrapTutorial = () => {
         </aside>
 
         <main className="tutorial-content">
-          <section id="intro">
-  <h2>Introduction</h2>
-  <p>Bootstrap is a free and open-source front-end framework for developing responsive and mobile-first websites. Originally developed by Mark Otto and Jacob Thornton at Twitter, Bootstrap was released as an open-source project in August 2011. The goal of the framework is to simplify the development of web pages and applications through the use of reusable components and a consistent design system.
-  
-Bootstrap includes pre-designed HTML elements, CSS styles, and optional JavaScript plugins to make building modern web interfaces easier. It offers a standard grid system for layout, a responsive design philosophy that ensures compatibility across a range of screen sizes and devices, and built-in support for components such as navigation bars, dropdowns, forms, buttons, and modals.
-
-The rise of mobile devices prompted a shift in web development strategies. Bootstrap embraced this trend by promoting a mobile-first design approach. This principle encourages developers to prioritize mobile designs first and then scale up for larger devices. It ensures better performance, usability, and user experience across platforms.
-
-Bootstrap is maintained by a large community of developers and is hosted on GitHub, where contributors can report bugs, request features, and collaborate on the codebase. Over time, Bootstrap has undergone significant changes. Bootstrap 4 brought a Flexbox-based grid system, improved utilities, and modularity. Bootstrap 5 continued this modernization by removing jQuery as a dependency and embracing more vanilla JavaScript, which reduced dependencies and improved performance.
-
-Many popular websites and applications have utilized Bootstrap due to its ease of use and consistency. It provides developers with a set of common design patterns and components, reducing the need to write custom CSS and JavaScript for standard UI elements. This leads to faster development cycles and more maintainable codebases.
-
-One key advantage of using Bootstrap is the consistency it offers across projects. The design language, spacing, typography, and component behaviors are standardized, ensuring that developers working on different parts of a website maintain a cohesive look and feel. This is particularly beneficial for teams and large-scale applications.
-
-Moreover, Bootstrap supports extensive customization. Developers can override default styles, use Sass variables, and configure Bootstrap to meet specific branding needs. Bootstrap’s documentation is comprehensive and includes usage examples, code snippets, and guidelines for each component.
-
-In addition to its built-in components, Bootstrap integrates well with third-party libraries and frameworks. It works seamlessly with jQuery, React, Angular, and Vue, among others. This allows developers to combine Bootstrap’s UI capabilities with modern front-end development practices.
-
-From beginners to advanced developers, Bootstrap remains a go-to solution for building fast, responsive, and attractive user interfaces. Whether you're creating a simple portfolio website or a complex enterprise application, Bootstrap provides the tools and flexibility to accelerate your development process while adhering to modern design standards.
-
-As technology continues to evolve, Bootstrap remains committed to staying relevant and efficient. The framework is continuously updated to align with the latest best practices in web development, browser compatibility, and accessibility.
-
-By leveraging Bootstrap, developers gain access to a robust toolkit that enhances productivity, ensures design consistency, and supports rapid prototyping and deployment. It is no wonder that Bootstrap continues to be one of the most widely adopted front-end frameworks in the world.</p>
+        <section id="intro">
+  <h2>Introduction to Bootstrap</h2>
+  <p>
+    Bootstrap is a powerful, open-source front-end framework developed by Twitter. It enables developers to quickly design and customize responsive mobile-first websites using pre-defined HTML, CSS, and JavaScript components.
+  </p>
+  <p>
+    First released in 2011, Bootstrap has become one of the most popular CSS frameworks due to its simplicity, flexibility, and responsive grid system. It helps developers build consistent user interfaces with minimal effort and ensures that web pages look great on all devices, from phones to desktops.
+  </p>
+  <h3>Why Use Bootstrap?</h3>
+  <ul>
+    <li><strong>Responsive Design:</strong> Built-in mobile-first approach with flexible grid layout.</li>
+    <li><strong>Pre-designed Components:</strong> Includes buttons, forms, navbars, modals, and more.</li>
+    <li><strong>Cross-browser Compatibility:</strong> Works seamlessly on all major browsers.</li>
+    <li><strong>Customizable:</strong> Easily override styles or use Bootstrap’s utility classes.</li>
+    <li><strong>Extensive Documentation:</strong> Well-documented with examples and explanations.</li>
+  </ul>
+  <p>
+    Whether you're building a simple landing page or a full-fledged application, Bootstrap streamlines your development process and allows for consistent, clean design.
+  </p>
 </section>
 
-          <section id="setup">
-  <h2>Setup</h2>
-  <p>Setting up Bootstrap is the foundation of leveraging its full potential in modern web development. There are multiple ways to integrate Bootstrap into your project, each with its own use cases, benefits, and configurations. In this comprehensive guide, we’ll walk through the setup options in detail, including CDN, package managers (npm/yarn), compiling Sass for customization, and integrating Bootstrap with front-end frameworks like React, Vue, and Angular.
-</p>
-**1. Using Bootstrap via CDN**
+        <section id="setup">
+  <h2>Setting Up Bootstrap</h2>
+  <p>
+    You can set up Bootstrap in your project in multiple ways. The most common methods include using a CDN or downloading the files locally.
+  </p>
 
-The fastest way to start using Bootstrap is through a Content Delivery Network (CDN). This method doesn’t require installation and works by linking to Bootstrap’s hosted CSS and JavaScript files. Add the following lines to your HTML:
+  <h3>1. Using Bootstrap via CDN (Recommended for Beginners)</h3>
+  <p>
+    Simply add the following links to your HTML file’s <code>&lt;head&gt;</code> and before the closing <code>&lt;/body&gt;</code> tag:
+  </p>
+  <pre>
+    <code>
+&lt;!-- Bootstrap CSS --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
 
-```html
-{/* Bootstrap CSS*/}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-{/* Bootstrap Bundle JS (includes Popper)*/}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-```
+&lt;!-- Bootstrap JS (with Popper) --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    </code>
+  </pre>
 
-This approach is perfect for quick prototypes, educational projects, and when you don’t need much customization.
-
-**2. Installing Bootstrap via npm or yarn**
-
-For more control and integration in modern front-end environments, using a package manager like npm or yarn is ideal:
-
-```bash
+  <h3>2. Installing with npm (For React or Angular Projects)</h3>
+  <pre>
+    <code>
 npm install bootstrap
-# or
-yarn add bootstrap
-```
-
-After installation, import Bootstrap in your JavaScript entry file:
-
-```javascript
+    </code>
+  </pre>
+  <p>
+    Then import it in your main JS file:
+  </p>
+  <pre>
+    <code>
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-```
+    </code>
+  </pre>
 
-This method is suitable for modular applications where you may want to tree-shake unused parts or integrate with frameworks.
+  <h3>3. Downloading Bootstrap Locally</h3>
+  <p>
+    You can download the compiled CSS and JS files from the official Bootstrap website and include them locally in your project:
+  </p>
+  <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer">https://getbootstrap.com</a>
 
-**3. Compiling Sass for Custom Builds**
+  <h3>4. Bootstrap Starter Template</h3>
+  <pre>
+    <code>
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;title&gt;Bootstrap Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1 class="text-center"&gt;Hello, Bootstrap!&lt;/h1&gt;
 
-Bootstrap provides all its source code in Sass files, which allows deep customization. This is best for branding or changing default variables. To use Sass, you’ll need Node.js, npm/yarn, and a build tool like Webpack or Vite:
-
-```bash
-npm install bootstrap sass
-```
-
-You can override Bootstrap’s default variables before importing its SCSS:
-
-```scss
-$primary: #ff5733;
-$font-family-base: 'Roboto', sans-serif;
-@import 'bootstrap/scss/bootstrap';
-```
-
-Compile it using your preferred Sass processor or bundler.
-
-**4. Integration with React**
-
-In React projects created using Create React App:
-
-```bash
-npm install bootstrap
-```
-
-Then import it in your `index.js`:
-
-```javascript
-import 'bootstrap/dist/css/bootstrap.min.css';
-```
-
-You can use Bootstrap’s classNames in JSX:
-
-```jsx
-<button className="btn btn-primary">Click me</button>
-```
-
-**5. Integration with Vue.js and Angular**
-
-In Vue:
-```bash
-npm install bootstrap
-```
-Then in `main.js`:
-```js
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-```
-
-In Angular:
-```bash
-npm install bootstrap
-```
-And update `angular.json`:
-```json
-"styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css"],
-"scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
-```
-
-**6. Bootstrap Icons**
-
-For iconography, you can use Bootstrap Icons:
-```html
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
-```
-Or install:
-```bash
-npm install bootstrap-icons
-```
-Then use like:
-```html
-<i class="bi bi-alarm"></i>
-```
-
-**7. Hosting Bootstrap Locally**
-
-Download from https://getbootstrap.com and include the CSS/JS files from your local server. This offers control over versions and offline access.
-
-**8. Environment Considerations**
-
-- **Performance**: CDN is faster for users globally due to caching.
-- **Customization**: npm + Sass is better for custom builds.
-- **Security**: Local hosting avoids reliance on external sources.
-- **Updates**: CDN always provides latest versions; local requires manual updating.
-
-**Conclusion**
-<p>
-Choose a Bootstrap setup method based on project size, complexity, and whether you need customization. CDNs are great for speed and ease, npm/yarn offer flexibility, and compiling Sass allows full control over styling. Framework integration steps further streamline development for SPAs. Regardless of how you choose to install it, Bootstrap’s setup process is beginner-friendly and scales beautifully with more advanced workflows.</p>
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+  </pre>
 </section>
 
-          <section id="grid">
-  <h2>Grid System</h2>
-  <p>Bootstrap’s grid system is one of its core features and the foundation of responsive layout design. It uses a flexible and robust system based on a 12-column layout that enables developers to design complex interfaces that automatically adjust to various screen sizes and devices. With Bootstrap, it’s easy to build responsive layouts that look great on phones, tablets, laptops, and desktops alike.
+<section id="grid">
+  <h2>Bootstrap Grid System</h2>
+  <p>
+    The grid system is the heart of Bootstrap’s layout design. It uses a series of containers, rows, and columns to layout and align content responsively.
+  </p>
 
-**1. How the Grid Works**
+  <h3>Key Concepts</h3>
+  <ul>
+    <li><strong>Container:</strong> The root element to hold rows and columns.</li>
+    <li><strong>Row:</strong> Wrapper for columns, used to align them horizontally.</li>
+    <li><strong>Column:</strong> Divides space in a row; uses classes like <code>.col-*</code> to control width.</li>
+    <li><strong>12-column layout:</strong> Each row is divided into 12 units.</li>
+  </ul>
 
-At its heart, the grid system in Bootstrap is based on Flexbox, introduced in Bootstrap 4 and refined in Bootstrap 5. It provides a clean and flexible way to structure layout elements horizontally and vertically. The system is composed of containers, rows, and columns:
+  <h3>Basic Grid Example</h3>
+  <pre>
+    <code>
+&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-4"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col-4"&gt;Column 2&lt;/div&gt;
+    &lt;div class="col-4"&gt;Column 3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 
-```html
-<div class="container">
-  <div class="row">
-    <div class="col">Column 1</div>
-    <div class="col">Column 2</div>
-  </div>
-</div>
-```
+  <h3>Responsive Breakpoints</h3>
+  <ul>
+    <li><code>.col-sm-*</code> – ≥576px</li>
+    <li><code>.col-md-*</code> – ≥768px</li>
+    <li><code>.col-lg-*</code> – ≥992px</li>
+    <li><code>.col-xl-*</code> – ≥1200px</li>
+    <li><code>.col-xxl-*</code> – ≥1400px</li>
+  </ul>
 
-**2. Containers**
+  <h3>Auto Layout</h3>
+  <p>
+    Columns without a specified number will automatically share the row:
+  </p>
+  <pre>
+    <code>
+&lt;div class="row"&gt;
+  &lt;div class="col"&gt;One&lt;/div&gt;
+  &lt;div class="col"&gt;Two&lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 
-Containers are the most basic layout element and are required when using the grid system. There are two types of containers:
-- `.container`: A responsive fixed-width container.
-- `.container-fluid`: Always takes up 100% of the width of the viewport.
-
-**3. Rows and Columns**
-
-Rows are horizontal groups of columns that ensure your columns are aligned properly. Columns within a row must add up to 12 for each row. You can use auto-layout columns, or specify the column size explicitly:
-
-```html
-<div class="row">
-  <div class="col-6">Half Width</div>
-  <div class="col-6">Half Width</div>
-</div>
-```
-
-**4. Responsive Breakpoints**
-
-Bootstrap provides six breakpoints for responsive design:
-- `col-` (extra small &gt 576px)
-- `col-sm-` (≥576px)
-- `col-md-` (≥768px)
-- `col-lg-` (≥992px)
-- `col-xl-` (≥1200px)
-- `col-xxl-` (≥1400px)
-
-This allows for highly customizable layouts that adapt gracefully to screen sizes:
-
-```html
-<div class="row">
-  <div class="col-md-4 col-sm-6 col-12">Responsive Column</div>
-</div>
-```
-
-**5. Nesting Grids**
-
-You can nest grids by placing rows inside columns:
-
-```html
-<div class="row">
-  <div class="col">
-    <div class="row">
-      <div class="col">Nested Column 1</div>
-      <div class="col">Nested Column 2</div>
-    </div>
-  </div>
-</div>
-```
-
-**6. Auto Layout Columns**
-
-Bootstrap automatically divides space evenly between columns with `.col`:
-
-```html
-<div class="row">
-  <div class="col">1</div>
-  <div class="col">2</div>
-  <div class="col">3</div>
-</div>
-```
-
-**7. Column Ordering and Alignment**
-
-You can reorder and align columns using utilities such as `order`, `align-self`, and `justify-content`:
-
-```html
-<div class="row">
-  <div class="col order-2">Second</div>
-  <div class="col order-1">First</div>
-</div>
-```
-
-**8. Offset Columns**
-
-Use offset classes to move columns to the right:
-
-```html
-<div class="row">
-  <div class="col-md-4 offset-md-4">Centered Column</div>
-</div>
-```
-
-**9. Gutter Spacing**
-
-Control spacing between columns using Bootstrap’s gutter classes. Set vertical and horizontal spacing using `.g-0` to `.g-5`:
-
-```html
-<div class="row g-3">
-  <div class="col">Guttered</div>
-  <div class="col">Layout</div>
-</div>
-```
-
-**10. Customizing the Grid**
-
-With Sass variables, you can customize grid breakpoints, container widths, gutter size, and more. This provides flexibility to tailor the grid to your design system.
-
-**Conclusion**
-
-Bootstrap’s grid system is powerful, intuitive, and highly customizable. It simplifies responsive design by providing ready-to-use layout options while supporting advanced customization. By mastering the grid system, developers can create professional layouts that adapt beautifully across devices, ensuring a seamless user experience everywhere.</p>
+  <h3>Nesting Columns</h3>
+  <p>You can nest rows inside columns for complex layouts:</p>
+  <pre>
+    <code>
+&lt;div class="col-6"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-6"&gt;Nested 1&lt;/div&gt;
+    &lt;div class="col-6"&gt;Nested 2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 </section>
 
-          <section id="typography">
-  <h2>Typography</h2>
-  <p>Typography in Bootstrap is one of the most fundamental aspects of UI design. Bootstrap provides a robust and flexible set of typography utilities and components designed to make content readable, accessible, and visually appealing. Typography encompasses headings, paragraphs, inline text elements, alignment, responsive text utilities, and contextual emphasis.
-</p>
-**1. Headings**
 
-Bootstrap supports all standard HTML headings from `<h1/>` to `<h6/>`, each with its own font size and margin. These headings automatically follow the typographic hierarchy:
+<section id="typography">
+  <h2>Bootstrap Typography</h2>
+  <p>
+    Typography in Bootstrap helps you create beautiful, readable, and responsive text content. Bootstrap includes styles for headings, paragraphs, lists, blockquotes, and more.
+  </p>
 
-```html
-<h1>h1. Bootstrap heading</h1>
-<h2>h2. Bootstrap heading</h2>
-<h3>h3. Bootstrap heading</h3>
-<h4>h4. Bootstrap heading</h4>
-<h5>h5. Bootstrap heading</h5>
-<h6>h6. Bootstrap heading</h6>
-```
+  <h3>Headings</h3>
+  <p>Use standard HTML heading tags:</p>
+  <pre>
+    <code>
+&lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;
+&lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;
+&lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;
+...
+    </code>
+  </pre>
+  <p>Bootstrap also provides the <code>.h1</code> through <code>.h6</code> classes for inline headings.</p>
 
-To apply heading styles to any element (like a `<div/>` or `<span/>`), use the `.h1` through `.h6` classes:
+  <h3>Display Headings</h3>
+  <p>Use <code>.display-1</code> to <code>.display-6</code> for larger headings:</p>
+  <pre>
+    <code>
+&lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;
+&lt;h1 class="display-4"&gt;Display 4&lt;/h1&gt;
+    </code>
+  </pre>
 
-```html
-<p class="h1">Styled as h1</p>
-```
+  <h3>Lead Paragraph</h3>
+  <pre>
+    <code>
+&lt;p class="lead"&gt;
+  This is a lead paragraph that stands out.
+&lt;/p&gt;
+    </code>
+  </pre>
 
-**2. Display Headings**
+  <h3>Text Utilities</h3>
+  <ul>
+    <li><code>.text-start</code>, <code>.text-center</code>, <code>.text-end</code> – Align text</li>
+    <li><code>.text-lowercase</code>, <code>.text-uppercase</code>, <code>.text-capitalize</code> – Transform text</li>
+    <li><code>.fw-bold</code>, <code>.fw-light</code>, <code>.fst-italic</code> – Font weight and style</li>
+    <li><code>.text-muted</code> – Light gray text</li>
+  </ul>
 
-Bootstrap offers display heading classes for larger, more prominent titles:
-
-```html
-<h1 class="display-1">Display 1</h1>
-<h1 class="display-2">Display 2</h1>
-```
-
-**3. Lead Paragraphs**
-
-Use `.lead` to make a paragraph stand out by increasing its font size and line height:
-
-```html
-<p class="lead">This is a lead paragraph. It stands out from regular paragraphs.</p>
-```
-
-**4. Inline Text Elements**
-
-Bootstrap includes styling for standard HTML inline elements like:
-- `<mark/>` for highlighting
-- `<small/>` for fine print
-- `<strong/>` for bold text
-- `<em/>` for italic text
-
-```html
-<p>You can use <mark>highlight</mark> to draw attention.</p>
-```
-
-**5. Blockquotes**
-
-To quote external content:
-
-```html
-<blockquote class="blockquote">
-  <p class="mb-0">A well-known quote, contained in a blockquote element.</p>
-</blockquote>
-```
-
-**6. Text Alignment**
-
-Use Bootstrap utility classes to align text:
-- `.text-start`
-- `.text-center`
-- `.text-end`
-
-```html
-<p class="text-center">This text is centered.</p>
-```
-
-**7. Text Transformation and Weight**
-
-Transform text using:
-- `.text-lowercase`
-- `.text-uppercase`
-- `.text-capitalize`
-
-Change weight using:
-- `.fw-bold`, `.fw-normal`, `.fw-light`
-- `.fst-italic`, `.fst-normal`
-
-**8. Responsive Font Sizes**
-<p>
-Boo tstrap 5 introduced responsive typography. Set base font size using html ( font-size: 1rem; ), and scale using media queries or utility classes. The `.fs-1` through `.fs-6` classes provide scalable font sizes:
-</p>
-```html
-<p class="fs-1">Extra large text</p>
-<p class="fs-6">Smallest text</p>
-```
-
-**9. Lists and Description Lists**
-
-Bootstrap resets default list styles and provides options for inline and unstyled lists:
-
-```html
-<ul class="list-unstyled">
-  <li>Item without bullets</li>
-</ul>
-
-<ul class="list-inline">
-  <li class="list-inline-item">One</li>
-  <li class="list-inline-item">Two</li>
-</ul>
-```
-
-**10. Code and Keyboard Input**
-
-Style inline code and keyboard input:
-
-```html
-<p>Use <code>&lt;section&gt;</code> to define a section.</p>
-<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>
-```
-
-**11. Text Colors and Backgrounds**
-
-Use contextual classes like `.text-primary`, `.text-success`, `.bg-light`, `.bg-dark`, etc., to apply color emphasis to text and backgrounds.
-
-**Conclusion**
-<p>
-Typography in Bootstrap is more than just text. It’s a system designed to maintain a visual hierarchy, accessibility, and usability. It helps you communicate effectively with your users by ensuring that text is readable, aesthetically pleasing, and consistent across platforms and browsers. With Bootstrap’s typography utilities, developers can build interfaces that are clean, professional, and responsive without writing extensive custom CSS.</p>
+  <h3>Blockquotes</h3>
+  <pre>
+    <code>
+&lt;blockquote class="blockquote"&gt;
+  &lt;p&gt;This is a blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+    </code>
+  </pre>
 </section>
 
-          <section id="colors">
-  <h2>Colors</h2>
-  <p>Bootstrap provides a powerful and flexible color system that enables developers to apply consistent color schemes across their UI elements. With utility classes, background and text colors can be applied with minimal effort, offering both functional and aesthetic customization. Bootstrap’s color palette includes predefined contextual colors and the ability to extend or customize these using Sass.
+<section id="colors">
+  <h2>Bootstrap Colors</h2>
+  <p>
+    Bootstrap includes a robust color palette for text, backgrounds, borders, and UI elements. These colors are consistent and customizable.
+  </p>
 
-**1. Contextual Text Colors**
+  <h3>Text Colors</h3>
+  <ul>
+    <li><code>.text-primary</code></li>
+    <li><code>.text-secondary</code></li>
+    <li><code>.text-success</code></li>
+    <li><code>.text-danger</code></li>
+    <li><code>.text-warning</code></li>
+    <li><code>.text-info</code></li>
+    <li><code>.text-light</code></li>
+    <li><code>.text-dark</code></li>
+    <li><code>.text-muted</code></li>
+  </ul>
 
-Bootstrap includes several contextual color classes that can be applied to text:
-- `.text-primary`
-- `.text-secondary`
-- `.text-success`
-- `.text-danger`
-- `.text-warning`
-- `.text-info`
-- `.text-light`
-- `.text-dark`
-- `.text-muted`
-- `.text-white`
+  <h3>Background Colors</h3>
+  <ul>
+    <li><code>.bg-primary</code></li>
+    <li><code>.bg-secondary</code></li>
+    <li><code>.bg-success</code></li>
+    <li><code>.bg-danger</code></li>
+    <li><code>.bg-warning</code></li>
+    <li><code>.bg-info</code></li>
+    <li><code>.bg-light</code></li>
+    <li><code>.bg-dark</code></li>
+    <li><code>.bg-white</code></li>
+  </ul>
 
-Example:
-```html
-<p class="text-success">This is a success message.</p>
-```
-
-**2. Background Colors**
-
-To style the background of elements, Bootstrap provides corresponding `.bg-*` utility classes:
-- `.bg-primary`, `.bg-secondary`, `.bg-success`, etc.
-
-```html
-<div class="p-3 mb-2 bg-info text-white">Informational background</div>
-```
-
-**3. Color Contrast and Accessibility**
-
-Accessibility is critical when dealing with colors. Bootstrap ensures good contrast between text and background. Developers should verify color combinations using tools like the WebAIM Contrast Checker. For lighter background shades, consider using `.text-dark` for readability, and `.text-light` on darker backgrounds.
-
-**4. State Colors in Components**
-
-These contextual colors are used in alerts, buttons, badges, and other components:
-```html
-<div class="alert alert-warning">This is a warning alert</div>
-<button class="btn btn-danger">Delete</button>
-<span class="badge bg-success">Approved</span>
-```
-
-**5. Custom Colors Using Sass**
-
-Bootstrap allows developers to extend or override the default color palette. For example:
-```scss
-$theme-colors: (
-  "custom-blue": #005f99,
-  "custom-green": #44cc44
-);
-```
-After adding this, you can use `.bg-custom-blue` or `.text-custom-green` after compiling Bootstrap with Sass.
-
-**6. Opacity Utilities**
-
-Bootstrap 5 includes text and background opacity utilities like `.bg-opacity-50`, `.text-opacity-75` to adjust transparency levels without writing custom CSS:
-```html
-<div class="bg-primary bg-opacity-50 text-white">Half transparent primary</div>
-```
-
-**7. Color and Background Utility Combinations**
-
-Combine background and text colors:
-```html
-<div class="bg-dark text-white p-3">Dark background with white text</div>
-```
-
-**8. Color Modes and Dark Mode Considerations**
-
-Although Bootstrap does not ship with a full dark mode out of the box, it provides tools and variables to build one. You can define custom themes using CSS variables or toggle between light/dark classes using JavaScript.
-
-**9. Link Colors**
-
-Links automatically adapt to text colors. You can also modify them manually using `.link-*` classes:
-```html
-<a href="#" class="link-primary">Primary link</a>
-```
-
-**10. Text and Background Gradient Utilities**
-
-Bootstrap also supports background gradients using `.bg-gradient` combined with any background color class:
-```html
-<div class="p-3 bg-primary bg-gradient text-white">Gradient example</div>
-```
-
-**Conclusion**
-
-The Bootstrap color system is comprehensive and built for flexibility, accessibility, and rapid development. Whether using predefined contextual colors, customizing your palette with Sass, or building a full theme with dynamic toggling, Bootstrap makes color management simple and consistent across all your components and pages.</p>
+  <h3>Contextual Examples</h3>
+  <pre>
+    <code>
+&lt;p class="text-danger"&gt;Error: Something went wrong!&lt;/p&gt;
+&lt;div class="bg-success text-white p-3"&gt;Operation successful!&lt;/div&gt;
+    </code>
+  </pre>
 </section>
 
-          <section id="tables">
-  <h2>Tables</h2>
-  <p>Bootstrap provides a comprehensive and highly customizable set of classes for working with tables. Whether you're displaying simple datasets or complex tabular data with interactive features, Bootstrap’s table utilities offer an efficient and clean way to render and style your tables.
-</p>
-**1. Basic Table Structure**
+<section id="tables">
+  <h2>Bootstrap Tables</h2>
+  <p>
+    Bootstrap makes styling HTML tables easy with its <code>.table</code> class. You can also use contextual classes, borders, stripes, and more.
+  </p>
 
-A basic table in Bootstrap uses the `.table` class to add styling to the HTML `<table/>` element:
-```html
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Alice</td>
-      <td>alice@example.com</td>
-    </tr>
-  </tbody>
-</table>
-```
+  <h3>Basic Table</h3>
+  <pre>
+    <code>
+&lt;table class="table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;alice@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;bob@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+    </code>
+  </pre>
 
-**2. Table Variants and Modifiers**
+  <h3>Table Variants</h3>
+  <ul>
+    <li><code>.table-striped</code> – Adds zebra-striping</li>
+    <li><code>.table-bordered</code> – Adds borders to all cells</li>
+    <li><code>.table-hover</code> – Highlights rows on hover</li>
+    <li><code>.table-dark</code> – Dark theme</li>
+    <li><code>.table-responsive</code> – Adds horizontal scrolling on small screens</li>
+  </ul>
 
-Bootstrap allows several modifiers to change the appearance of your tables:
-- `.table-striped`: Adds zebra-striping to rows.
-- `.table-bordered`: Adds borders to all cells.
-- `.table-hover`: Adds a hover effect on rows.
-- `.table-sm`: Makes the table more compact by cutting cell padding.
-
-```html
-<table class="table table-striped table-hover table-sm">
-  ...
-</table>
-```
-
-**3. Contextual Classes**
-
-Add contextual classes to rows or individual cells to convey meaning through color:
-- `.table-primary`, `.table-success`, `.table-danger`, `.table-warning`, `.table-info`, etc.
-
-```html
-<tr class="table-success">
-  <td>2</td><td>Bob</td><td>bob@example.com</td>
-</tr>
-```
-
-**4. Dark Tables**
-
-Use `.table-dark` to invert table colors for dark-themed UIs:
-```html
-<table class="table table-dark">
-  ...
-</table>
-```
-
-**5. Responsive Tables**
-
-For horizontal scrolling on smaller screens, wrap your table in `.table-responsive`:
-```html
-<div class="table-responsive">
-  <table class="table">
+  <h3>Responsive Table</h3>
+  <pre>
+    <code>
+&lt;div class="table-responsive"&gt;
+  &lt;table class="table table-striped"&gt;
     ...
-  </table>
-</div>
-```
-
-**6. Captions and Table Head Options**
-
-Add captions to tables with `<caption/>`:
-```html
-<table class="table">
-  <caption>List of users</caption>
-  ...
-</table>
-```
-
-You can also darken the header using `.table-dark` on `<thead/>`:
-```html
-<thead class="table-dark"/>
-```
-
-**7. Alignment and Sizing**
-
-Align content using text utilities:
-```html
-<td class="text-end">$250</td>
-```
-
-You can also use `.w-25`, `.w-50`, etc., to control column widths.
-
-**8. Nesting Tables**
-
-You can nest tables inside table cells, although it's not common:
-```html
-<td>
-  <table class="table table-sm">
-    <tr><td>Nested</td></tr>
-  </table>
-</td>
-```
-
-**9. Combining with JavaScript**
-
-Tables can be enhanced with JavaScript for sorting, pagination, and searching using plugins like DataTables. Although not a part of Bootstrap, it's often used alongside:
-```html
-<pre>
-        <code>
-          {`<script>
-  $(document).ready(function() {
-    $('#myTable').DataTable();
-  });
-</script>`}
-        </code>
-      </pre>
-
-
-
-**10. Custom Styling and Theming**
-
-With Sass, you can override Bootstrap’s table variables like `$table-cell-padding`, `$table-border-color`, or create your own table variants. This allows full control over the appearance and behavior of tables.
-
-**Conclusion**
-<p>
-Tables are essential for data display, and Bootstrap provides an accessible, elegant, and extendable way to manage them. From simple listings to dynamic, interactive tables, Bootstrap’s table utilities allow developers to maintain visual consistency and enhance user interaction across devices.</p>
+  &lt;/table&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 </section>
 
 <section id="forms">
-  <h2>Forms</h2>
-  <p>Bootstrap forms provide a wide range of features and utility classes that simplify the creation of consistent, accessible, and stylish form components. Whether you're building a login page, registration system, search bar, or full-featured dashboard, Bootstrap's form controls and layout tools offer a responsive, mobile-first approach to capturing user input.
-</p>
-**1. Basic Form Structure**
+  <h2>Bootstrap Forms</h2>
+  <p>
+    Bootstrap makes creating stylish, responsive forms easy using utility classes and form-specific components. It supports different layouts, validation states, and input types.
+  </p>
 
-Bootstrap forms typically start with the `.form-group` (or just spacing utilities in Bootstrap 5) and `.form-control` classes:
-```html
-<form>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-</form>
-```
+  <h3>Basic Form Example</h3>
+  <pre>
+    <code>
+&lt;form&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="email" class="form-label"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="email" placeholder="name@example.com" /&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="message" class="form-label"&gt;Message&lt;/label&gt;
+    &lt;textarea class="form-control" id="message" rows="3"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </code>
+  </pre>
 
-**2. Form Controls**
+  <h3>Form Layouts</h3>
+  <ul>
+    <li><code>.form-control</code> – Applies Bootstrap styles to inputs</li>
+    <li><code>.form-label</code> – Properly styles form labels</li>
+    <li><code>.form-check</code> – For checkboxes and radio buttons</li>
+    <li><code>.form-select</code> – For dropdown menus</li>
+  </ul>
 
-Input types supported include:
-- `text`, `email`, `password`, `number`, `tel`, `url`, `search`, `range`, `color`, etc.
+  <h3>Inline Forms</h3>
+  <pre>
+    <code>
+&lt;form class="d-flex"&gt;
+  &lt;input class="form-control me-2" type="search" placeholder="Search" /&gt;
+  &lt;button class="btn btn-outline-success" type="submit"&gt;Search&lt;/button&gt;
+&lt;/form&gt;
+    </code>
+  </pre>
 
-Checkboxes and radios use `.form-check`:
-```html
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" id="check1"/>
-  <label class="form-check-label" for="check1">Check me</label>
-</div>
-```
-
-**3. Form Layout Options**
-
-Bootstrap supports vertical, horizontal, and inline layouts:
-- **Vertical**: default stacked layout.
-- **Horizontal**: use grid classes to align labels/inputs.
-- **Inline**: use `.row` and `.col` in the same line.
-
-**4. Input Sizing and Validation**
-
-Use `.form-control-sm` or `.form-control-lg` for input size. Built-in validation styles:
-```html
-<input type="text" class="form-control is-valid"/>
-<div class="valid-feedback">Looks good!</div>
-
-<input type="text" class="form-control is-invalid"/>
-<div class="invalid-feedback">Please choose a username.</div>
-```
-
-**5. Floating Labels**
-
-Floating labels animate placeholders into labels:
-```html
-<div class="form-floating">
-  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-  <label for="floatingInput">Email address</label>
-</div>
-```
-
-**6. Select Menus and File Inputs**
-
-Custom selects and file uploads:
-```html
-<select class="form-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-</select>
-
-<input class="form-control" type="file"/>
-```
-
-**7. Form Grid and Row Layout**
-
-Use `.row` and `.col-*` for responsive multi-column forms:
-```html
-<div class="row">
-  <div class="col-md-6">
-    <input type="text" class="form-control" placeholder="First name"/>
-  </div>
-  <div class="col-md-6">
-    <input type="text" class="form-control" placeholder="Last name"/>
-  </div>
-</div>
-```
-
-**8. Readonly and Disabled Fields**
-
-```html
-<input type="text" class="form-control" placeholder="Readonly input" readonly/>
-<input type="text" class="form-control" placeholder="Disabled input" disabled/>
-```
-
-**9. Helper Text, Tooltips, and Feedback**
-
-```html
-<input type="text" class="form-control" aria-describedby="passwordHelp"/>
-<small id="passwordHelp" class="form-text text-muted">Use 8-20 characters.</small>
-```
-
-**10. Accessibility and ARIA**
-
-Bootstrap forms are built with accessibility in mind. Use `aria-*` attributes and semantic HTML. Every form control should be associated with a `<label/>`.
-
-**Conclusion**
-<p>
-Bootstrap makes building and managing forms efficient and accessible. With built-in classes for every type of input and feedback, flexible layouts, and responsive tools, developers can create beautiful, usable, and performant forms that work seamlessly across devices.</p>
+  <h3>Form Validation</h3>
+  <p>Use <code>.is-valid</code> and <code>.is-invalid</code> classes with feedback messages.</p>
 </section>
 
-          <section id="buttons">
-  <h2>Buttons</h2>
-  <p>Buttons are essential components of any user interface. In Bootstrap, buttons are designed to be flexible, accessible, and easily customizable. With a wide variety of predefined button styles, sizes, states, and functionalities, developers can quickly implement consistent call-to-action elements throughout their websites.
+<section id="buttons">
+  <h2>Bootstrap Buttons</h2>
+  <p>
+    Buttons in Bootstrap are easy to implement and style. Use predefined classes to set colors, sizes, outlines, and states.
+  </p>
 
-**1. Basic Button Classes**
+  <h3>Basic Button</h3>
+  <pre>
+    <code>
+&lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+    </code>
+  </pre>
 
-Use the `.btn` class along with a contextual class like `.btn-primary` to create buttons:
-```html
-<button type="button" class="btn btn-primary">Primary</button>
-```
+  <h3>Button Variants</h3>
+  <ul>
+    <li><code>btn-primary</code></li>
+    <li><code>btn-secondary</code></li>
+    <li><code>btn-success</code></li>
+    <li><code>btn-danger</code></li>
+    <li><code>btn-warning</code></li>
+    <li><code>btn-info</code></li>
+    <li><code>btn-light</code></li>
+    <li><code>btn-dark</code></li>
+    <li><code>btn-link</code></li>
+  </ul>
 
-Bootstrap offers the following button types:
-- `.btn-primary`
-- `.btn-secondary`
-- `.btn-success`
-- `.btn-danger`
-- `.btn-warning`
-- `.btn-info`
-- `.btn-light`
-- `.btn-dark`
-- `.btn-link`
+  <h3>Outline Buttons</h3>
+  <pre>
+    <code>
+&lt;button class="btn btn-outline-success"&gt;Outline Success&lt;/button&gt;
+    </code>
+  </pre>
 
-**2. Outline Buttons**
+  <h3>Button Sizes</h3>
+  <pre>
+    <code>
+&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
+&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+    </code>
+  </pre>
 
-Outline buttons provide a subtle alternative:
-```html
-<button class="btn btn-outline-success">Outline Success</button>
-```
-
-**3. Button Sizes**
-
-Adjust button sizes using `.btn-lg` or `.btn-sm`:
-```html
-<button class="btn btn-primary btn-lg">Large</button>
-<button class="btn btn-secondary btn-sm">Small</button>
-```
-
-**4. Block Buttons**
-
-Make buttons full-width using `.d-grid` and `.w-100`:
-```html
-<div class="d-grid">
-  <button class="btn btn-danger w-100">Full Width</button>
-</div>
-```
-
-**5. Disabled Buttons**
-
-Disable buttons by adding the `disabled` attribute:
-```html
-<button class="btn btn-primary" disabled>Disabled</button>
-```
-
-**6. Active States**
-
-Toggle `.active` class to highlight selected buttons:
-```html
-<button class="btn btn-primary active">Active</button>
-```
-
-**7. Button Groups**
-
-Group multiple buttons horizontally using `.btn-group`:
-```html
-<div class="btn-group" role="group">
-  <button type="button" class="btn btn-secondary">Left</button>
-  <button type="button" class="btn btn-secondary">Middle</button>
-  <button type="button" class="btn btn-secondary">Right</button>
-</div>
-```
-
-**8. Toggle Buttons (Checkbox/Radio)**
-
-Use buttons as toggle inputs:
-```html
-<input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off"/>
-<label class="btn btn-outline-primary" for="btncheck1">Toggle</label>
-```
-
-**9. Customizing Buttons with Sass**
-
-Bootstrap’s buttons can be customized by overriding Sass variables like `$btn-padding-y`, `$btn-border-radius`, `$btn-font-weight`, and defining new contextual button variants:
-```scss
-<pre>
-        <code>
-          {`
-$btn-custom-color: #6610f2;
-.btn-custom {
-  @include button-variant($btn-custom-color, darken($btn-custom-color, 10%));
-}
-`}
-        </code>
-      </pre>
-```
-
-**10. Accessibility Considerations**
-
-Use proper semantic elements and ARIA labels for buttons used in dynamic interactions. Ensure color contrast and keyboard navigation compatibility for better accessibility.
-
-**Conclusion**
-
-Bootstrap’s button system is feature-rich and extremely versatile. From predefined styles to full customization using Sass, you can create buttons that match the design and functionality requirements of any project. Buttons play a key role in guiding users, and with Bootstrap, implementing them correctly is both easy and consistent.</p>
+  <h3>Disabled Button</h3>
+  <pre>
+    <code>
+&lt;button class="btn btn-primary" disabled&gt;Disabled&lt;/button&gt;
+    </code>
+  </pre>
 </section>
 
-          <section id="images">
-  <h2>Images</h2>
-  <p>Images are an essential part of modern web design. Bootstrap provides utility classes and components that make working with images responsive, visually appealing, and easy to manage. From fluid image scaling to alignment, rounded corners, and figure captions, Bootstrap offers all the necessary tools for image presentation.</p>
+<section id="images">
+  <h2>Bootstrap Images</h2>
+  <p>
+    Bootstrap provides helpful classes for working with images responsively and stylishly.
+  </p>
 
-**1. Responsive Images**
+  <h3>Responsive Images</h3>
+  <p>
+    Use <code>.img-fluid</code> to make images scale with the parent element.
+  </p>
+  <pre>
+    <code>
+&lt;img src="example.jpg" class="img-fluid" alt="Responsive image" /&gt;
+    </code>
+  </pre>
 
-The `.img-fluid` class ensures that images scale with the parent element and do not exceed their container width:
-```html
-<img src="example.jpg" class="img-fluid" alt="Responsive image"/>
-```
-This class adds `max-width: 100%;` and `height: auto;` for responsiveness.
+  <h3>Image Shapes</h3>
+  <ul>
+    <li><code>.rounded</code> – Slightly rounded corners</li>
+    <li><code>.rounded-circle</code> – Circular image</li>
+    <li><code>.img-thumbnail</code> – Adds a border and padding</li>
+  </ul>
+  <pre>
+    <code>
+&lt;img src="avatar.jpg" class="rounded-circle" alt="Avatar" /&gt;
+    </code>
+  </pre>
 
-**2. Image Shapes**
+  <h3>Aligning Images</h3>
+  <ul>
+    <li><code>.float-start</code> / <code>.float-end</code></li>
+    <li><code>.mx-auto d-block</code> – Center an image</li>
+  </ul>
+    <h3>Best Practices</h3>
+  <ul>
+    <li>Always use the <code>alt</code> attribute for accessibility.</li>
+    <li>Use modern formats (WebP) for better performance.</li>
+    <li>Set fixed dimensions if layout shifting is an issue.</li>
+  </ul></section>
 
-Bootstrap includes classes for applying different border radius styles:
-- `.rounded` - slightly rounded corners
-- `.rounded-circle` - circular image
-- `.rounded-pill` - pill-shaped image
+<section id="alerts">
+  <h2>Bootstrap Alerts</h2>
+  <p>
+    Alerts in Bootstrap are used to display feedback messages for user actions, such as success messages, warnings, errors, or general information.
+  </p>
 
-```html
-<img src="avatar.jpg" class="rounded-circle" alt="Avatar"/>
-```
+  <h3>Basic Alert</h3>
+  <pre>
+    <code>
+&lt;div class="alert alert-success" role="alert"&gt;
+  Your form has been submitted successfully!
+&lt;/div&gt;
+    </code>
+  </pre>
 
-**3. Image Alignment**
-
-Use text alignment or Flexbox utilities to align images horizontally:
-```html
-<img src="logo.png" class="float-start" alt="Left aligned"/>
-<img src="logo.png" class="float-end" alt="Right aligned"/>
-<img src="logo.png" class="mx-auto d-block" alt="Centered"/>
-```
-
-**4. Image with Text - Figure Component**
-
-Use the `.figure` component to group images with captions:
-```html
-<figure class="figure">
-  <img src="sample.jpg" class="figure-img img-fluid rounded" alt="Example image"/>
-  <figcaption class="figure-caption">A caption for the image.</figcaption>
-</figure>
-```
-
-**5. Responsive Behavior with Grid and Flex**
-
-Combine image classes with Bootstrap's grid and utility classes to make image galleries and layout systems:
-```html
-<div class="row">
-  <div class="col-md-4">
-    <img src="1.jpg" class="img-fluid rounded" alt="Image 1"/>
-  </div>
-  <div class="col-md-4">
-    <img src="2.jpg" class="img-fluid rounded" alt="Image 2"/>
-  </div>
-</div>
-```
-
-**6. Background Images**
-
-Bootstrap doesn't have built-in background image classes but works well with custom CSS or utility classes like `bg-dark`, `text-white`, and `p-5` to style background image containers:
-```html
-<div class="bg-dark text-white p-5" style="background-image: url('bg.jpg'); background-size: cover;">
-  <h1>Background Hero</h1>
-</div>
-```
-
-**7. Overlay Text on Images**
-
-Overlaying text using positioning utilities:
-```html
-<div class="position-relative">
-  <img src="header.jpg" class="img-fluid" alt="Header"/>
-  <h2 class="position-absolute top-50 start-50 translate-middle text-white">Overlay Heading</h2>
-</div>
-```
-
-**8. Accessibility Best Practices**
-
-Always include `alt` attributes on `<img/>` tags for accessibility and SEO. Use descriptive text for screen readers.
-
-**9. Image Lazy Loading**
-
-Use the `loading="lazy"` attribute to defer offscreen images, improving performance:
-```html
-<img src="gallery.jpg" loading="lazy" class="img-fluid" alt="Lazy loaded image"/>
-```
-
-**10. Integration with Carousel, Cards, and Modals**
-
-Images can be easily inserted into other Bootstrap components such as carousels, cards, and modals to create rich user interfaces.
-
-**Conclusion**
-<p>
-Bootstrap provides flexible tools for managing images in any layout. Whether you're working on responsive design, custom galleries, or decorative layouts with background overlays and captions, Bootstrap’s image utilities streamline the process while ensuring accessibility and responsiveness.</p>
+  <h3>Alert Variants</h3>
+  <ul>
+    <li><code>alert-primary</code></li>
+    <li><code>alert-secondary</code></li>
+    <li><code>alert-success</code></li>
+    <li><code>alert-danger</code></li>
+    <li><code>alert-warning</code></li>
+    <li><code>alert-info</code></li>
+    <li><code>alert-light</code></li>
+    <li><code>alert-dark</code></li>
+  </ul>
+  <h3>Dismissible Alerts</h3>
+  <p>Add a close button using <code>.alert-dismissible</code> and <code>data-bs-dismiss="alert"</code>.</p>
+  <pre>
+    <code>
+&lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+  Warning! Please double-check your input.
+  &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"&gt;&lt;/button&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 </section>
-
-
-          <section id="alerts">
-  <h2>Alerts</h2>
-  <p>Alerts are used to provide contextual feedback messages for typical user actions. Bootstrap provides a flexible alert component that can be easily customized for success messages, warnings, errors, or informational prompts.
-
-**1. Basic Alert Structure**
-
-Use the `.alert` class combined with contextual color classes like `.alert-primary`, `.alert-success`, `.alert-danger`, etc.:
-```html
-<div class="alert alert-success" role="alert">
-  Your profile has been updated successfully!
-</div>
-```
-
-**2. Contextual Alert Types**
-
-Bootstrap offers a variety of contextual classes:
-- `.alert-primary`
-- `.alert-secondary`
-- `.alert-success`
-- `.alert-danger`
-- `.alert-warning`
-- `.alert-info`
-- `.alert-light`
-- `.alert-dark`
-
-Each provides a distinct color and meaning for the alert.
-
-**3. Dismissing Alerts**
-
-Make alerts dismissible by adding the `.alert-dismissible` class and a close button:
-```html
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong>Warning!</strong> You should check your inputs.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-```
-
-**4. Links in Alerts**
-
-Use `.alert-link` to highlight links inside alerts:
-```html
-<div class="alert alert-info">
-  Check out our <a href="#" class="alert-link">latest updates</a>.
-</div>
-```
-
-**5. Alert Content Formatting**
-
-You can use headings and paragraphs inside alerts:
-```html
-<div class="alert alert-danger">
-  <h4 class="alert-heading">Error!</h4>
-  <p>There was an issue saving your data. Please try again.</p>
-  <hr/>
-  <p class="mb-0">Contact support if the problem persists.</p>
-</div>
-```
-
-**6. Animating Alerts**
-
-Use `.fade` and `.show` classes with dismissible alerts to animate them:
-```html
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-  This alert will fade in.
-</div>
-```
-
-**7. Alert Accessibility**
-
-Include `role="alert"` to notify screen readers that this is a dynamic message. This improves accessibility for users with assistive technologies.
-
-**8. Custom Alerts with Icons**
-
-You can combine alerts with icon libraries such as Bootstrap Icons or Font Awesome:
-```html
-<div class="alert alert-warning d-flex align-items-center" role="alert">
-  <i class="bi bi-exclamation-triangle-fill me-2"></i>
-  <div>
-    Warning! Please verify your email address.
-  </div>
-</div>
-```
-
-**9. Stacking Alerts**
-
-Multiple alerts can be stacked vertically with spacing utilities:
-```html
-<div class="mb-2 alert alert-info">Info message</div>
-<div class="mb-2 alert alert-danger">Danger message</div>
-```
-
-**10. Dynamic Alerts with JavaScript**
-
-Use JavaScript (manually or via Bootstrap JS) to dynamically create or dismiss alerts:
-```javascript
-<pre>
-        <code>
-          {`const alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-const alert = (message, type) => {
-  const wrapper = document.createElement('div');
-  wrapper.innerHTML = [
-    \`<div class="alert alert-\${type} alert-dismissible" role="alert">\`,
-    \`   \${message}\`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('');
-  alertPlaceholder.append(wrapper);
-};`}
-        </code>
-      </pre>
-
-**Conclusion**
-
-Bootstrap alerts are versatile components for providing user feedback. With options for styling, dismissing, adding links, and animation, they allow developers to keep users informed and engaged with minimal effort. Their accessibility and integration with JavaScript make them a staple for interactive and user-friendly interfaces.</p>
-</section>
-
-// Cards Section
 <section id="cards">
-  <h2>Cards</h2>
-  <p>The Card component in Bootstrap is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, images, and powerful layout tools.
+  <h2>Bootstrap Cards</h2>
+  <p>
+    Cards are flexible and extensible content containers. They include options for headers, footers, images, and various content alignment settings.
+  </p>
 
-**1. Basic Card Example**
-```html
-<div class="card" style="width: 18rem;">
-  <img src="image.jpg" class="card-img-top" alt="..."/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-```
+  <h3>Basic Card</h3>
+  <pre>
+    <code>
+&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="image.jpg" class="card-img-top" alt="..." /&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Card Title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Some quick text to build the card content.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Go somewhere&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 
-**2. Card Header and Footer**
-```html
-<div class="card">
-  <div class="card-header">Featured</div>
-  <div class="card-body">
-    <p>Content</p>
-  </div>
-  <div class="card-footer">Footer info</div>
-</div>
-```
+  <h3>Card Header & Footer</h3>
+  <pre>
+    <code>
+&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;Featured&lt;/div&gt;
+  &lt;div class="card-body"&gt;Main content here&lt;/div&gt;
+  &lt;div class="card-footer text-muted"&gt;2 days ago&lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 
-**3. Card Layouts**
-Use card groups, decks, and columns:
-```html
-<div class="card-group">
-  <div class="card">...</div>
-  <div class="card">...</div>
-</div>
-```
-
-**4. Cards with List Groups**
-```html
-<div class="card">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Item 1</li>
-    <li class="list-group-item">Item 2</li>
+  <h3>Card Layouts</h3>
+  <ul>
+    <li><code>.card-deck</code> (Bootstrap 4) or <code>.row .col</code> layout (Bootstrap 5)</li>
+    <li>Use <code>.card-group</code> for grouped cards</li>
+    <li>Cards can also be horizontal with <code>.d-flex</code></li>
   </ul>
-</div>
-```
-
-**5. Image Overlays**
-```html
-<div class="card bg-dark text-white">
-  <img src="..." class="card-img" alt="..."/>
-  <div class="card-img-overlay">
-    <h5 class="card-title">Title</h5>
-  </div>
-</div>
-```
-
-**6. Card Alignment and Utilities**
-Cards support padding, alignment, margins, background, border, and shadow utilities:
-```html
-<div class="card text-center shadow-lg border-0"></div>
-```
-
-**7. Custom Card Styles**
-With Sass, customize border radius, shadows, padding, or add new classes for specific card types like product cards, testimonials, or team member bios.
-
-**8. Responsive Cards**
-Use the grid or flex utilities to make cards responsive and adaptive to screen size.
-
-**Conclusion**
-Bootstrap cards provide an easy way to build complex UIs. From blog previews to pricing plans and product showcases, cards offer clean organization, consistent structure, and beautiful styling — all with minimal markup and no custom CSS required.</p>
 </section>
 
-// Navbar Section
 <section id="navbar">
-  <h2>Navbar</h2>
-  <p>The Navbar component in Bootstrap is a powerful and flexible responsive navigation header, including support for branding, navigation, and more. It helps structure the main menu or top navigation of a website and adapts beautifully to different screen sizes.</p>
+  <h2>Bootstrap Navbar</h2>
+  <p>
+    The navbar component is used to create navigation headers. It supports branding, links, dropdowns, and can be fixed or collapsible.
+  </p>
 
-**1. Basic Structure**
-```html
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Brand</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-```
+  <h3>Basic Navbar</h3>
+  <pre>
+    <code>
+&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Features&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+    </code>
+  </pre>
 
-**2. Color Schemes**
-Use `.navbar-light` with light backgrounds or `.navbar-dark` with dark backgrounds:
-```html
-<nav class="navbar navbar-dark bg-dark"></nav>
-```
-
-**3. Responsive Behavior**
-`.navbar-expand-lg` determines when the navbar becomes horizontal. You can use different breakpoints: `sm`, `md`, `lg`, `xl`, `xxl`.
-
-**4. Brand Logo or Name**
-The `.navbar-brand` class is used for a company name, logo, or both:
-```html
-<a class="navbar-brand" href="#">
-  <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
-  Company
-</a>
-```
-
-**5. Collapsible Content**
-Navigation links, forms, buttons, or other content can be placed inside `.collapse.navbar-collapse`. The button with `navbar-toggler` toggles it on smaller screens.
-
-**6. Nav Alignment**
-Use `ms-auto` to right-align items:
-```html
-<ul class="navbar-nav ms-auto"/>
-```
-
-**7. Dropdown Menus**
-```html
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Dropdown</a>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
+  <h3>Color Schemes</h3>
+  <ul>
+    <li><code>.navbar-light bg-light</code></li>
+    <li><code>.navbar-dark bg-dark</code></li>
+    <li><code>.bg-primary</code>, <code>.bg-success</code>, etc. for themed backgrounds</li>
   </ul>
-</li>
-```
 
-**8. Navbar Forms and Search**
-```html
-<form class="d-flex">
-  <input class="form-control me-2" type="search" placeholder="Search"/>
-  <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
-```
-
-**9. Sticky and Fixed Navbars**
-- `.fixed-top` makes the navbar stick to the top of the screen.
-- `.sticky-top` sticks only on scroll.
-
-**10. Integration Tips**
-- Use `aria-*` for accessibility.
-- Consider collapse behavior on mobile.
-- Style links with `active`, `disabled`, or utility classes.
-
-**Conclusion**
-<p>
-The Bootstrap navbar is a highly configurable and responsive UI component. It forms the backbone of user navigation and ensures an intuitive experience across devices. Whether using a simple horizontal menu or a fully featured responsive navbar with dropdowns, search, and forms, Bootstrap’s navbar component offers everything needed to build a seamless user interface.</p>
+  <h3>Fixed and Sticky Navbars</h3>
+  <ul>
+    <li><code>.fixed-top</code> – Fixes the navbar to the top</li>
+    <li><code>.fixed-bottom</code> – Fixes the navbar to the bottom</li>
+    <li><code>.sticky-top</code> – Sticks the navbar on scroll</li>
+  </ul>
 </section>
 
+<section id="modals">
+  <h2>Bootstrap Modals</h2>
+  <p>
+    Modals are dialog boxes or pop-ups used to display content over the current page. Bootstrap provides a flexible modal component with built-in styles and JavaScript behavior.
+  </p>
 
-
-// Modal Section
-<section id="modal">
-  <h2>Modals</h2>
-  <p>Bootstrap modals are dialog boxes or pop-up windows that appear over the current page. They are widely used to display interactive content such as forms, confirmations, images, and notifications, without requiring the user to leave the current page.</p>
-
-**1. Basic Modal Structure**
-```html
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Your content goes here.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-**2. Triggering a Modal**
-Use a button or link to trigger the modal:
-```html
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <h3>Basic Modal Structure</h3>
+  <pre>
+    <code>
+&lt;!-- Button to trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"&gt;
   Launch Modal
-</button>
-```
+&lt;/button&gt;
 
-**3. Modal Sizes**
-Modals can be resized with classes:
-- `.modal-sm`
-- `.modal-lg`
-- `.modal-xl`
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title" id="modalLabel"&gt;Modal Title&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;
+        This is a Bootstrap modal!
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 
-**4. Vertically Centered Modal**
-Use `.modal-dialog-centered` to center vertically:
-```html
-<div class="modal-dialog modal-dialog-centered"></div>
-```
-
-**5. Scrollable Modal**
-For lengthy content:
-```html
-<div class="modal-dialog modal-dialog-scrollable"></div>
-```
-
-**6. Fullscreen Modal**
-Add `.modal-fullscreen` for 100% viewport:
-```html
-<div class="modal-dialog modal-fullscreen"></div>
-```
-
-**7. Static Backdrop Modal**
-Prevent closing when clicking outside:
-```html
-<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"></div>
-```
-
-**8. Using JavaScript**
-```javascript
-const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-myModal.show();
-```
-
-**9. Accessibility**
-Bootstrap automatically handles roles and focus management, but you can add `aria-*` attributes to enhance usability.
-
-**10. Use Cases**
-- Login/Register forms
-- Confirmation dialogs
-- Image/lightbox views
-- Dynamic AJAX content
-
-**Conclusion**
-<p>
-Modals in Bootstrap are powerful, easy to implement, and highly customizable. They enhance user experience by enabling interaction within a contained UI overlay, keeping users focused without navigating away from the current page.</p>
+  <h3>Modal Options</h3>
+  <ul>
+    <li><code>fade</code>: Adds animation</li>
+    <li><code>modal-lg</code>, <code>modal-sm</code>: Sizes</li>
+    <li><code>data-bs-backdrop="static"</code>: Prevents modal from closing when clicking outside</li>
+  </ul>
 </section>
 
-
-          // Collapse Section
 <section id="collapse">
-  <h2>Collapse</h2>
-  <p>The Collapse component in Bootstrap allows developers to toggle the visibility of content with smooth animations. It’s commonly used for accordions, expandable content sections, and toggling menus.</p>
+  <h2>Bootstrap Collapse</h2>
+  <p>
+    The collapse component is used to show and hide content with a smooth animation. It's commonly used for toggling menus, FAQ sections, or any expandable/collapsible content.
+  </p>
 
-**1. Basic Collapse Example**
-```html
-<p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Toggle Content
-  </a>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    This content is hidden by default and revealed when the button is clicked.
-  </div>
-</div>
-```
+  <h3>Basic Collapse Example</h3>
+  <pre>
+    <code>
+&lt;button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#demoCollapse"&gt;
+  Toggle Content
+&lt;/button&gt;
 
-**2. Using Buttons or Links**
-Both `<a/>` and `<button/>` elements can be used to toggle collapse elements using `data-bs-toggle="collapse"` and `data-bs-target` or `href` attributes.
+&lt;div id="demoCollapse" class="collapse mt-2"&gt;
+  This is hidden content revealed by collapse!
+&lt;/div&gt;
+    </code>
+  </pre>
 
-**3. Multiple Targets**
-One trigger can toggle multiple elements by separating the targets with commas:
-```html
-<button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#first, #second">
-  Toggle Both
-</button>
-```
-
-**4. Accordion Example**
-```html
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+  <h3>Accordion Example</h3>
+  <pre>
+    <code>
+&lt;div class="accordion" id="accordionExample"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"&gt;
         Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        This is the content of the first accordion item.
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-**5. Controlled Collapsing**
-Add `.show` to keep an item expanded by default. Remove it to start collapsed.
-
-**6. Animations**
-Bootstrap handles height transitions automatically using `max-height`. You can combine with utility classes for padding, margins, etc.
-
-**7. Accessibility**
-Use `aria-expanded`, `aria-controls`, and `aria-labelledby` attributes for accessibility. Bootstrap automatically manages most of this when using proper markup.
-
-**8. Horizontal Collapse**
-Bootstrap 5.2 introduced experimental horizontal collapse with `.collapse-horizontal`:
-```html
-<div class="collapse collapse-horizontal" id="collapseWidthExample">
-  <div class="card card-body" style="width: 300px;">
-    Horizontal collapsible content.
-  </div>
-</div>
-```
-
-**9. JavaScript Control**
-You can programmatically show/hide collapse components:
-```javascript
-var collapseElement = document.getElementById('collapseExample');
-var collapseInstance = new bootstrap.Collapse(collapseElement);
-collapseInstance.show();
-```
-
-**10. Use Cases**
-- FAQs and accordions
-- Collapsible navigation panels
-- Hidden forms and advanced filters
-- Toggleable content sections in dashboards
-
-**Conclusion**
-<p>
-The Collapse component adds a clean, interactive way to reveal or hide content without the need for complex JavaScript. With excellent accessibility, responsive integration, and multiple triggering options, it’s ideal for dynamic layouts and user-driven interfaces.</p>
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample"&gt;
+      &lt;div class="accordion-body"&gt;
+        This is the body content.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 </section>
-
-
-// Collapse Section
-<section id="collapse">
-  <h2>Collapse</h2>
-  <p>The Collapse component in Bootstrap allows developers to toggle the visibility of content with smooth animations. It’s commonly used for accordions, expandable content sections, and toggling menus.
-</p>
-**1. Basic Collapse Example**
-```html
-<p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Toggle Content
-  </a>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    This content is hidden by default and revealed when the button is clicked.
-  </div>
-</div>
-```
-
-**2. Using Buttons or Links**
-Both `<a/>` and `<button/>` elements can be used to toggle collapse elements using `data-bs-toggle="collapse"` and `data-bs-target` or `href` attributes.
-
-**3. Multiple Targets**
-One trigger can toggle multiple elements by separating the targets with commas:
-```html
-<button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#first, #second">
-  Toggle Both
-</button>
-```
-
-**4. Accordion Example**
-```html
-<div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        This is the content of the first accordion item.
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-**5. Controlled Collapsing**
-Add `.show` to keep an item expanded by default. Remove it to start collapsed.
-
-**6. Animations**
-Bootstrap handles height transitions automatically using `max-height`. You can combine with utility classes for padding, margins, etc.
-
-**7. Accessibility**
-Use `aria-expanded`, `aria-controls`, and `aria-labelledby` attributes for accessibility. Bootstrap automatically manages most of this when using proper markup.
-
-**8. Horizontal Collapse**
-Bootstrap 5.2 introduced experimental horizontal collapse with `.collapse-horizontal`:
-```html
-<div class="collapse collapse-horizontal" id="collapseWidthExample">
-  <div class="card card-body" style="width: 300px;">
-    Horizontal collapsible content.
-  </div>
-</div>
-```
-
-**9. JavaScript Control**
-You can programmatically show/hide collapse components:
-```javascript
-var collapseElement = document.getElementById('collapseExample');
-var collapseInstance = new bootstrap.Collapse(collapseElement);
-collapseInstance.show();
-```
-
-**10. Use Cases**
-- FAQs and accordions
-- Collapsible navigation panels
-- Hidden forms and advanced filters
-- Toggleable content sections in dashboards
-
-**Conclusion**
-<p>
-The Collapse component adds a clean, interactive way to reveal or hide content without the need for complex JavaScript. With excellent accessibility, responsive integration, and multiple triggering options, it’s ideal for dynamic layouts and user-driven interfaces.</p>
-</section>
-
-// Carousel Section
 <section id="carousel">
-  <h2>Carousel</h2>
-  <p>The Bootstrap Carousel component is a slideshow for cycling through a series of content—images, text, or custom markup. It includes support for indicators, controls, captions, and autoplaying content.</p>
+  <h2>Bootstrap Carousel</h2>
+  <p>
+    Carousels are used to create image sliders. Bootstrap’s carousel component enables cycling through images, text, or custom markup with controls and indicators.
+  </p>
 
-**1. Basic Carousel Example**
-```html
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="slide1.jpg" class="d-block w-100" alt="..."/>
-    </div>
-    <div class="carousel-item">
-      <img src="slide2.jpg" class="d-block w-100" alt="..."/>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-```
+  <h3>Basic Carousel Example</h3>
+  <pre>
+    <code>
+&lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
-**2. Indicators**
-Add carousel indicators using `<div class="carousel-indicators"/>`:
-```html
-<div class="carousel-indicators">
-  <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
-  <button type="button" data-bs-slide-to="1" data-bs-target="#carouselExample"></button>
-</div>
-```
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="image1.jpg" class="d-block w-100" alt="..." /&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image2.jpg" class="d-block w-100" alt="..." /&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="image3.jpg" class="d-block w-100" alt="..." /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-**3. Captions**
-Include captions with `.carousel-caption`:
-```html
-<div class="carousel-caption d-none d-md-block">
-  <h5>First slide label</h5>
-  <p>Description text here.</p>
-</div>
-```
+  &lt;button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+    </code>
+  </pre>
 
-**4. Crossfade Animation**
-Use `.carousel-fade` for crossfade transitions:
-```html
-<div class="carousel slide carousel-fade"></div>
-```
-
-**5. Autoplay and Intervals**
-Use `data-bs-ride="carousel"` and `data-bs-interval="3000"` for timing between slides.
-
-**6. Pause on Hover**
-Carousel automatically pauses when the user hovers over it. You can disable this via JS or attributes.
-
-**7. JavaScript Control**
-```javascript
-<pre>
-        <code>
-          {`var carousel = new bootstrap.Carousel('#carouselExample', {
-  interval: 2000,
-  wrap: true
-});`}
-        </code>
-      </pre>
-
-
-**8. Accessibility**
-Use `aria-labels`, `alt` text on images, and visually hidden elements for screen readers.
-
-**9. Customizing with Sass**
-Modify transition timing, indicator size, colors, and more with Bootstrap’s Sass variables.
-
-**10. Use Cases**
-- Image sliders
-- Hero banners
-- Product showcases
-- Testimonials and review rotators
-
-**Conclusion**
-<p>
-The Carousel component is a visually appealing way to highlight content dynamically. With rich features, touch support, accessibility, and customization options, it can serve as a central visual component on landing pages and galleries.</p>
+  <h3>Carousel Options</h3>
+  <ul>
+    <li><code>data-bs-interval</code> – Time between slides</li>
+    <li><code>data-bs-pause</code> – Pause on hover</li>
+    <li><code>.carousel-fade</code> – Fade effect instead of sliding</li>
+  </ul>
 </section>
 
-// Utility Classes Section
+
 <section id="utilities">
-  <h2>Utility Classes</h2>
-  <p>Bootstrap’s utility classes provide low-level, single-purpose helper classes that can be used to style elements directly without writing custom CSS. They are designed to offer speed, simplicity, and maintainability for common layout and design tasks.
-
-**1. Spacing Utilities (Margin & Padding)**
-Use `.m-*`, `.p-*`, `.mt-*`, `.mb-*`, `.ms-*`, `.me-*`, `.pt-*`, `.pb-*`, etc., where `*` can range from `0` to `5`, `auto`, or responsive variants:
-```html
-<div class="mt-3 mb-2 p-4">Box with margin top and bottom, and padding</div>
-```
-
-**2. Display Utilities**
-Set display modes:
-- `.d-block`, `.d-inline`, `.d-inline-block`
-- `.d-flex`, `.d-inline-flex`, `.d-grid`, `.d-none`
-- Responsive: `.d-sm-block`, `.d-md-flex`, etc.
-
-**3. Text Utilities**
-Text alignment, transformation, and wrapping:
-```html
-<p class="text-center text-uppercase text-truncate">Centered, uppercased, truncated text</p>
-```
-
-**4. Sizing Utilities**
-Control width and height:
-```html
-<div class="w-25 h-50">Box with 25% width and 50% height</div>
-```
-
-**5. Background and Color Utilities**
-```html
-<div class="bg-primary text-white p-3">Colored background with white text</div>
-```
-
-**6. Borders and Shadows**
-Add/remove borders, change border radius, apply shadows:
-```html
-<div class="border rounded shadow-sm">Box with border, rounded corners, and shadow</div>
-```
-
-**7. Position Utilities**
-Control position and offsets:
-```html
-<div class="position-relative top-0 start-50 translate-middle">Centered element</div>
-```
-
-**8. Flexbox Utilities**
-Quickly create flex layouts:
-```html
-<div class="d-flex justify-content-between align-items-center">...</div>
-```
-
-**9. Visibility & Overflow**
-```html
-<div class="invisible">This is hidden but still occupies space</div>
-<div class="overflow-auto">Scrollable when content overflows</div>
-```
-
-**10. Responsive Helpers**
-Combine utilities with breakpoints (`sm`, `md`, `lg`, `xl`, `xxl`) for responsiveness:
-```html
-<div class="d-none d-md-block">Hidden on small, visible on medium+</div>
-```
-
-**Conclusion**
-Utility classes provide a powerful alternative to custom CSS for rapid styling, consistent layouts, and responsive designs. Mastering Bootstrap’s utility classes can significantly speed up development and reduce the need for writing additional style rules.</p>
-</section>
+  </section>
 
 
 </main>

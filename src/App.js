@@ -31,14 +31,9 @@ import ReactTutorial from "./React";
 import User from "./User";
 import LearnMorePage from "./LearnMorePage";
 import ContactPage from "./ContactPage";
-import AboutUsPage from "./AboutPage";
-import Admin from "./admin";
-import Content from "./content";
-import Analytics from "./analytics";
-import Setting from "./setting";
-import Manage from "./manage";
-import UserManagement from "./useradmin";
+import AboutUsPage from "./AboutPage"
 import Profile from "./profile";
+
 const App = () => {
   const [user] = useAuthState(auth);
 
@@ -74,12 +69,7 @@ const App = () => {
         <Route path="/LearnMorePage" element={<LearnMorePage />} />
         <Route path="/ContactPage" element={<ContactPage />} />
         <Route path="/AboutUsPage" element={<AboutUsPage />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/content" element={<Content />} />
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/setting" element={<Setting />} />
-        <Route path="/manage" element={<Manage />} />
-        <Route path="/user" element={<UserManagement />} />
+        
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>

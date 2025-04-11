@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import React, { useEffect, useState, useRef } from 'react';
 import { auth } from "./firebase";
-import { Link } from "react-router-dom";
+import { database } from './firebase';
+import { ref, push, set } from 'firebase/database';
+import { onValue } from "firebase/database";
 
 const Exercise = () => {
   const navigate = useNavigate();
@@ -197,6 +199,29 @@ Nodejs: [
     });
   };
 
+  const handleSubmitQuiz = () => {
+    const score = calculateScore();
+    const user = auth.currentUser;
+  
+    if (user) {
+      const userId = user.uid;
+      saveUserScore(userId, {
+        score: score,
+        topic: topic,
+        timestamp: new Date().toISOString()
+      });
+      alert(`Your score: ${score.toFixed(2)}%\nResult saved to Firebase.`);
+    } else {
+      alert("User not logged in. Cannot save score.");
+    }
+  };
+  
+// Function to save result
+const saveUserScore = (userId, resultData) => {
+  const scoreRef = push(ref(database, `results/${userId}`));
+  set(scoreRef, resultData);
+};
+
   // Handle next question
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions[topic].length - 1) {
@@ -296,11 +321,11 @@ Nodejs: [
           <button onClick={() => handleTopicSelect("PHP")}>PHP</button>
           <button onClick={() => handleTopicSelect("C#")}>C#</button>
           <button onClick={() => handleTopicSelect("Bootstrap")}>Bootstrap</button>
-          <button onClick={() => handleTopicSelect("jQuery")}>jQuery</button>
+          <button onClick={() => handleTopicSelect("JQuery")}>jQuery</button>
           <button onClick={() => handleTopicSelect("Django")}>Django</button>
           <button onClick={() => handleTopicSelect("MySQL")}>MySQL</button>
           <button onClick={() => handleTopicSelect("React")}>React</button>
-          <button onClick={() => handleTopicSelect("Node.js")}>Node.js</button>
+          <button onClick={() => handleTopicSelect("Nodejs")}>Node.js</button>
         </div>
 
         {topic && (
@@ -339,11 +364,13 @@ Nodejs: [
             </div>
 
             <div className="submit-button">
-              {currentQuestionIndex === questions[topic].length - 1 && (
-                <button onClick={() => alert(`Your score: ${calculateScore()}%`)}>
-                  Submit Quiz
-                </button>
-              )}
+            {currentQuestionIndex === questions[topic].length - 1 && (
+  <button onClick={() => alert(`Your score: ${calculateScore()}%`)}>
+  Submit Quiz
+</button>
+
+)}
+
             </div>
           </div>
         )}
