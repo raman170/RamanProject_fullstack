@@ -5,7 +5,7 @@ import {Link, useNavigate } from "react-router-dom"; // Ensure this is imported
 import "./Login.css";
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
+
     email: "",
     message: "",
   });
@@ -73,9 +73,6 @@ const Contact = () => {
       <section className="content contact-form">
         <div className="form-box">
           <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
-
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" required />
 

@@ -8,6 +8,30 @@ import { ref, push, set } from 'firebase/database';
 import { onValue } from "firebase/database";
 
 const Exercise = () => {
+  const [query, setQuery] = useState("");
+    
+      const handleSearch = () => {
+        const cards = document.querySelectorAll(".language-card");
+        let matchFound = false;
+    
+        cards.forEach((card) => {
+          const name = card.getAttribute("data-name").toLowerCase();
+          if (name.includes(query.toLowerCase().trim()) && query !== "") {
+            card.style.border = "3px solid #1976d2";
+            card.style.backgroundColor = "#bbdefb";
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            matchFound = true;
+          } else {
+            card.style.border = "";
+            card.style.backgroundColor = "#e3f2fd";
+          }
+        });
+    
+        if (!matchFound && query !== "") {
+          alert("No matching language found.");
+        }
+      };
+      
   const navigate = useNavigate();
   const [topic, setTopic] = useState("");
   const [answers, setAnswers] = useState({});
@@ -182,7 +206,60 @@ Nodejs: [
       { question: "Which of the following is used to make an element visible in CSS?", options: ["visibility: visible;", "display: show;", "visibility: true;", "display: block;"], correct: "visibility: visible;" },
       { question: "Which property is used to change the text size in CSS?", options: ["font-size", "text-size", "size", "text-font-size"], correct: "font-size" },
       { question: "How do you make a list appear horizontally in CSS?", options: ["list-style: inline;", "list-style-type: none;", "display: inline;", "display: block;"], correct: "display: inline;" }
+    ],
+  CSharp : [
+      {
+        question: "Which keyword is used to define a class in C#?",
+        options: ["define", "struct", "class", "new"],
+        correct: "class"
+      },
+      {
+        question: "Which of the following is the correct entry point for a C# console application?",
+        options: ["static void Main()", "public void Start()", "Main()", "public Main()"],
+        correct: "static void Main()"
+      },
+      {
+        question: "What is the default value of an uninitialized int variable in C# (in a class)?",
+        options: ["0", "null", "undefined", "NaN"],
+        correct: "0"
+      },
+      {
+        question: "Which of these is used for exception handling in C#?",
+        options: ["try/catch", "try/except", "throw/catch", "do/catch"],
+        correct: "try/catch"
+      },
+      {
+        question: "How do you create an object in C#?",
+        options: ["Object obj = Object();", "Object obj = new Object();", "Object obj();", "Object obj = Object.new();"],
+        correct: "Object obj = new Object();"
+      },
+      {
+        question: "Which keyword is used to inherit a class in C#?",
+        options: ["inherits", "base", "extends", ":"],
+        correct: ":"
+      },
+      {
+        question: "Which access modifier allows a class member to be accessed only within its class?",
+        options: ["private", "public", "protected", "internal"],
+        correct: "private"
+      },
+      {
+        question: "What is the size of the 'int' type in C#?",
+        options: ["2 bytes", "4 bytes", "8 bytes", "Depends on the system"],
+        correct: "4 bytes"
+      },
+      {
+        question: "Which of the following is used to define an interface in C#?",
+        options: ["interface", "abstract", "implements", "contract"],
+        correct: "interface"
+      },
+      {
+        question: "Which method is used to output text to the console in C#?",
+        options: ["print()", "echo()", "System.Write()", "Console.WriteLine()"],
+        correct: "Console.WriteLine()"
+      }
     ]
+    
   };
 
   // Handle topic selection
@@ -287,11 +364,20 @@ const saveUserScore = (userId, resultData) => {
             <li><a href="/User" className="logo-link">FullStackAcademy</a></li>
             <li><a href="/tutorial">Tutorials</a></li>
             <li><a href="/exercise">Exercises</a></li>
-            <li><a href="/LearnmorePage">Services</a></li>
+            <li><a href="/LearnMorePage">Services</a></li>
           </ul>
         </div>
 
         <div className="auth-buttons" ref={dropdownRef}>
+        <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search"
+            className="search-bar"
+            aria-label="Search"
+          />
+          <button onClick={handleSearch} className="btn search-btn">Search</button>
           <div
             className="user-icon"
             onClick={() => setShowDropdown((prev) => !prev)}
@@ -319,7 +405,7 @@ const saveUserScore = (userId, resultData) => {
           <button onClick={() => handleTopicSelect("CSS")}>CSS</button>
           <button onClick={() => handleTopicSelect("JavaScript")}>JavaScript</button>
           <button onClick={() => handleTopicSelect("PHP")}>PHP</button>
-          <button onClick={() => handleTopicSelect("C#")}>C#</button>
+          <button onClick={() => handleTopicSelect("CSharp")}>C#</button>
           <button onClick={() => handleTopicSelect("Bootstrap")}>Bootstrap</button>
           <button onClick={() => handleTopicSelect("JQuery")}>jQuery</button>
           <button onClick={() => handleTopicSelect("Django")}>Django</button>
