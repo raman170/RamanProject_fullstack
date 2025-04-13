@@ -1,12 +1,10 @@
+// src/Signup.js
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db } from "./firebase";
+import { doc, setDoc } from "firebase/firestore";
 import "./Login.css";
-import "./Home";
-import "./login";
-import { updateProfile } from "firebase/auth";
-
 
 const Signup = () => {
   const [Username, setName] = useState("");
@@ -20,7 +18,14 @@ const Signup = () => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(userCredential.user, { displayName: Username });
-  
+
+      // Save user info to Firestore
+      await setDoc(doc(db, "users", userCredential.user.uid), {
+        uid: userCredential.user.uid,
+        username: Username,
+        email: email,
+      });
+
       navigate("/login");
     } catch (error) {
       setError(error.message);
@@ -50,7 +55,7 @@ const Signup = () => {
               </tr>
               <tr>
                 <td colSpan="2" className="center">
-                  <button type="submit" className="login-button" ><a href="/login">Sign Up</a></button>
+                  <button type="submit" className="login-button">Sign Up</button>
                 </td>
               </tr>
               <tr>

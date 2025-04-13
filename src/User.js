@@ -173,6 +173,25 @@ const User = () => {
         </div>
       </section>
 
+      <section className="youtube-section">
+        <h2>YouTube Channel</h2>
+        <div className="youtube-logo-container">
+          <a href="https://www.youtube.com/@w3schools" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+              alt="YouTube Logo"
+              className="youtube-logo"
+            />
+          </a>
+          <p className="youtube-website-name">W3Schools</p>
+        </div>
+        <p className="youtube-description">
+          Join our coding tutorials on YouTube, where we explain coding concepts step by step.
+          <a href="https://www.youtube.com/@w3schools" target="_blank" rel="noopener noreferrer">Subscribe here</a>
+          for the latest programming tutorials and updates.
+        </p>
+      </section>
+      
       <footer className="footer">
         <div className="footer-links">
           <a href="/ContactPage">Contact Us</a>

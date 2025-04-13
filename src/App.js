@@ -33,7 +33,12 @@ import LearnMorePage from "./LearnMorePage";
 import ContactPage from "./ContactPage";
 import AboutUsPage from "./AboutPage"
 import Profile from "./profile";
-
+import AdminRoutes from './admin/AdminRoutes';
+import AdminSidebar from "./admin/AdminSidebar";
+import Dashboard from "./admin/Dashboard";
+import ManageCourses from "./admin/ManageCourses";
+import UserManagement from "./admin/UserManagement";
+import ContentModeration from "./admin/ContentModeration";
 const App = () => {
   const [user] = useAuthState(auth);
 
@@ -69,8 +74,14 @@ const App = () => {
         <Route path="/LearnMorePage" element={<LearnMorePage />} />
         <Route path="/ContactPage" element={<ContactPage />} />
         <Route path="/AboutUsPage" element={<AboutUsPage />} />
-        
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<AdminRoutes />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/ManageCourses" element={<ManageCourses />} />
+        <Route path="/UserManagement" element={<UserManagement />} />
+        <Route path="/ContentModeration" element={<ContentModeration />} />
+        <Route path="/AdminSidebar" element={<AdminSidebar />} />
+
       </Routes>
     </Router>
   );

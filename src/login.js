@@ -5,6 +5,7 @@ import { auth } from "./firebase";
 import "./Login.css";
 import "./Home";
 import "./User";
+import "./admin/AdminRoutes";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +16,14 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/User");
+  
+      // Check if it's the admin credentials
+      if (email === "ramandeepkaur860220@gmail.com" && password === "admin@123") {
+        navigate("./admin/AdminRoutes");
+      } else {
+        navigate("/User");
+      }
+  
     } catch (error) {
       setError(error.message);
     }

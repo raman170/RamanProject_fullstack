@@ -134,7 +134,7 @@ const Home = () => {
       <footer className="footer">
         <div className="footer-links">
           <Link to="/contact">Contact Us</Link>
-          <Link to="/aboutus">About Us</Link>
+          <Link to="/Aboutus">About Us</Link>
         </div>
         <p>© 2025 FullStackAcademy. All rights reserved.</p>
       </footer>
